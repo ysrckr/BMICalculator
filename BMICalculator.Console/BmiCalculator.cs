@@ -1,44 +1,44 @@
 
 namespace BMICalculator.Console;
 
-public class BmiCalculator 
+public class BmiCalculator
 {
-   private double weightInKg;
-   private double heightInCm;
+   private double weight;
+   private double height;
    private double weightInLbs;
    private double heightInInches;
    private double Bmi { get; set; }
 
    public BmiCalculator(double weight, double height)
    {
-      weightInKg = weight;
-      heightInCm = height;
+      this.weight = weight;
+      this.height = height;
    }
    
-   public void convertToImperial()
+   public void ConvertToImperial()
    {
-      weightInLbs = weightInKg * 2.20462;
-      heightInInches = heightInCm * 0.393701;
+      weightInLbs = weight * 2.20462;
+      heightInInches = height * 0.393701;
    }
    
-   public void convertToMetric()
+   public void ConvertToMetric()
    {
-      weightInKg = weightInLbs * 0.453592;
-      heightInCm = heightInInches * 2.54;
+      weight = weightInLbs * 0.453592;
+      height = heightInInches * 2.54;
    }
    
-   public double calculateBmi()
+   public double CalculateBmi()
    {
-      Bmi = weightInKg / Math.Pow(heightInCm / 100, 2);
+      Bmi = weight / Math.Pow(height / 100, 2);
       return Bmi;
    }
    
-   public void calculateBmiImperial()
+   public void CalculateBmiImperial()
    {
       Bmi = weightInLbs / Math.Pow(heightInInches, 2) * 703;
    }
    
-   public string getBmiCategory()
+   public string GetBmiCategory()
    {
       if (Bmi < 18.5)
       {
